@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+    height: 100vh;
+    /* 设置容器的高度为视口高度，以确保满屏显示 */
+}
+
+.background-container {
+    /* position: relative; */
+    background-image: url('../images/Jambe.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed;  */
+    /* position 属性设置为 fixed 时，该元素会相对于视口（浏览器窗口）进行定位，
+    而不是相对于文档流中的父元素。这意味着即使页面滚动，该元素也会保持固定的位置。 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 将背景图片的堆叠顺序设置为最低 */
+}
+
+
+
+.introduction-container {
+    position: relative;
+    width: 60%;
+    /* 用于水平居中一个块级元素 */
+    margin: 10px auto;
+    /* background-color: antiquewhite; */
+}
+
+.introduction {
+    width: 95%;
+    /* 用于水平居中一个块级元素 */
+    margin: 0 auto;
+    background-color: rgb(85, 59, 25);
+    background-color: rgba(85, 59, 25, 0.9); /* 设置背景色 */
+}
+
+.moi {
+    width: 100%;
+    /* 设置图片宽度为 introduction 的宽度的百分比 */
+    height: auto;
+    /* 保持宽高比例 */
+    display: block;
+    /* 去除默认的行内元素间隙 */
+    padding: 10px;
+}
+
+.moi-text {
+    padding: 10px;
+}

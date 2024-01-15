@@ -1,0 +1,179 @@
+/*让这个文字距离上边框 175 px 的距离*/
+.overlay h1 {
+    display: block;
+    margin-top: 175px;
+    height: 50px;
+}
+
+.overlay p {
+    margin-top: 150px;
+    height: 50px;
+    font-size: 65px;
+    color: white;
+}
+
+/* 是幻灯片的背景，要加一个背景色 */
+.slideshow {
+    position: absolute;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 放幻灯片所有元素的容器 */
+.container {
+    position: absolute;
+    top: 50%;
+    /* 将元素的顶部定位到父容器的50%位置 */
+    left: 50%;
+    /* 将元素的左边定位到父容器的50%位置 */
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 60%;
+    /* background-color: rgb(206, 127, 24); */
+}
+
+/* 放图片的容器 */
+.image-container {
+    position: absolute;
+    top: 0%;
+    /* 将元素的顶部定位到父容器的50%位置 */
+    left: 50%;
+    /* 将元素的左边定位到父容器的50%位置 */
+    transform: translate(-50%, 0%);
+    height: 230px;
+    width: 50%;
+    /* background-color: rgb(24, 130, 206); */
+}
+
+/* 放原点的容器 */
+.spot-container {
+    position: absolute;
+    bottom: 0%;
+    /* 将元素的顶部定位到父容器的50%位置 */
+    left: 50%;
+    /* 将元素的左边定位到父容器的50%位置 */
+    transform: translate(-50%, 0%);
+    height: 70px;
+    width: 40px;
+    /* background-color: rgb(24, 206, 112); */
+}
+
+/* 放左箭头的容器 */
+.left-pointing {
+    position: absolute;
+    top: 25%;
+    /* 将元素的顶部定位到父容器的50%位置 */
+    left: 0%;
+    /* 将元素的左边定位到父容器的50%位置 */
+    transform: translate(0%, 0%);
+    height: 50px;
+    width: 30px;
+    /* background-color: rgb(24, 206, 112); */
+}
+
+/* 放右箭头的容器 */
+.right-pointing {
+    position: absolute;
+    top: 25%;
+    /* 将元素的顶部定位到父容器的50%位置 */
+    right: 0%;
+    /* 将元素的左边定位到父容器的50%位置 */
+    transform: translate(0%, 0%);
+    height: 50px;
+    width: 30px;
+    /* background-color: rgb(24, 206, 112); */
+}
+
+/* 对图片的大小进行设置 */
+.image-container img {
+    height: 220px;
+}
+
+/* 对箭头的位置进行设置 */
+.arrow {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    /* 让文本元素 > 位于 <a> 元素的正中间 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* add a black background color with a little bit see-through */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 对小圆点的位置进行设置 */
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-top: 20px;
+}
+
+/* 放在小点上时会变背景色 */
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* 淡出动画 */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+/*背景图片2 start*/
+.backimage2 {
+    margin: 0;
+    padding: 0;
+    /* background-color: #272726; */
+    background-image: url('../images/boxing.png'); /* 替换 'your-image.jpg' 为实际图片的路径 */
+    background-size: cover; /* 保持宽高比并覆盖整个屏幕 */
+    background-position: center; /* 居中对齐 */
+    background-repeat: no-repeat; /* 不重复 */
+    /*100vh 表示元素的高度将占据整个视窗的高度。这对于创建全屏背景图片或元素很有用，特别是在移动设备上。*/
+    /*这个很重要，90vh 表示元素的高度将占据整个视窗高度的90%，就是说这个图片占据你电脑屏幕的 90%，对于响应式的请求很有用，因为每个人的电脑屏幕大小都不一样*/
+    height: 90vh; /* 设置页面高度为视口高度 */
+    position: relative;
+}
+
+.backimage3 {
+    margin: 0;
+    padding: 0;
+    /* background-color: #272726; */
+    background-image: url('../images/Jogging.png'); /* 替换 'your-image.jpg' 为实际图片的路径 */
+    background-size: cover; /* 保持宽高比并覆盖整个屏幕 */
+    background-position: center; /* 居中对齐 */
+    background-repeat: no-repeat; /* 不重复 */
+    /*100vh 表示元素的高度将占据整个视窗的高度。这对于创建全屏背景图片或元素很有用，特别是在移动设备上。*/
+    /*这个很重要，90vh 表示元素的高度将占据整个视窗高度的90%，就是说这个图片占据你电脑屏幕的 90%，对于响应式的请求很有用，因为每个人的电脑屏幕大小都不一样*/
+    height: 90vh; /* 设置页面高度为视口高度 */
+    position: relative;
+}
+/*背景图片2 end*/

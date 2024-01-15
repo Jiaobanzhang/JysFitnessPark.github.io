@@ -1,0 +1,33 @@
+/*所有元素的内外边距都是 0px*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*不要li列表自带的前面的原点*/
+li {
+    list-style: none
+}
+
+/*原来的链接是蓝色且自带下划线，这里去掉默认的属性*/
+a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.connect:hover > a,
+li:hover > a,
+li:hover > i {
+    color: #FFD600;
+    transition: color 0.5s ease; /* 颜色渐变效果 */
+}
+
+/*完成 用来设置背景颜色，字体，字体颜色，字体形式的*/
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #000;
+    font: 15px/1.5 Tahoma, Arial, sans-serif;
+    color: #666;
+}
+
