@@ -1,0 +1,20 @@
+
+/*这个 contact.css 包含的是独属于联系界面的部分*/
+/*让这个文字距离上边框 175 px 的距离*/
+.contact{
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    /*background: #FFD600;*/
+    display: flex;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact p{
+    font-size: 24px;
+    color: #ffffff;
+}

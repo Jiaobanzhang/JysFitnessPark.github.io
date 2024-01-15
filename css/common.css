@@ -1,0 +1,350 @@
+/*这个 common.css 包含的是页面的头部和尾部*/
+
+/* 这个是要使用字体图标必须要导入的一段代码，不用清楚是干嘛的，知道这么用就行 */
+/* 这段代码在 icomoon 文件下的 style.css 文件中*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?mk1ouh');
+    src: url('../fonts/icomoon.eot?mk1ouh#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?mk1ouh') format('truetype'),
+    url('../fonts/icomoon.woff?mk1ouh') format('woff'),
+    url('../fonts/icomoon.svg?mk1ouh#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/*表示 nav 浏览窗口中的 字体图标*/
+.nav .icomoon,
+.header .icomoon {
+    font-family: "icomoon";
+    font-size: 16px;
+    /*这个字体图标是 i, 会导致字体跟着下移，所以在这里给字体图标的行高设小一点*/
+    /*行高等于高，垂直居中*/
+    /*i标签上移，带动 li 标签上移*/
+    line-height: 26px;
+}
+
+.icomoon2 {
+    font-family: "icomoon";
+    font-size: 20px;
+    color: aliceblue;
+}
+
+/*版心,让模块居中*/
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 控制元素的浮动效果 左对齐右对齐*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 导航 */
+.nav {
+    height: 50px;
+    /*设置了元素的行高为 50 像素。这意味着该元素中的文本将在垂直方向上居中显示，文字基线到元素顶部和底部的距离都是 25 像素。*/
+    line-height: 50px;
+    background-color: #3B444B;
+}
+
+/*要让 导航栏<li> 元素居中浮动，你可以使用 Flexbox 或者 Grid 布局来实现*/
+.nav .menu {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    padding: 0; /* 可选：去掉默认内边距 */
+    list-style: none; /* 去掉默认列表样式 */
+}
+
+/*表示导航栏中所有的 li 之间的间距 */
+.nav li {
+    margin: 0 25px;
+    /*display 属性用于定义元素应该生成的框类型。在这里，block 值将元素呈现为块级元素。
+    块级元素会在页面上独占一行，并且垂直方向上会有一些默认的间距，从上至下排列。*/
+    display: block;
+}
+
+
+/* 隐藏下拉菜单 */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease; /* 卷帘门过渡效果 */
+    /*display: none;*/
+    position: absolute;
+    z-index: 1;
+    /* 设置尺寸和样式 */
+    width: 220px; /* 设置宽度 */
+    background-color: rgba(59, 68, 75, 0.5); /* 设置背景色 */
+    padding: 0px; /* 设置内边距 */
+    border-radius: 3px;
+}
+
+/* 显示下拉菜单 */
+.nav li:hover .submenu {
+    max-height: 300px; /* 设置一个足够大的值，以展开内容 */
+    /*display: block;*/
+}
+
+/*header*/
+.header {
+    height: 100px;
+    line-height: 100px;
+    background-color: #3B444B;
+}
+
+/*position: 子绝父相, 这个 div 是 logo 的父类元素*/
+.header > div {
+    position: relative;
+}
+
+/*div logo 的设置*/
+/*position: 子绝父相,这样子元素的相对位置就是基于父元素的*/
+.logo {
+    position: absolute;
+    top: 20px;
+    /*这是相对于 .w div 左边框的相对距离*/
+    left: 261px;
+    width: 678px;
+    height: 70px;
+    /*background: #FFD600;*/
+}
+
+
+/*a 是行内元素，没有大小，所以要使用 display 转化成 块元素,
+这样才能有大小，当鼠标放在 a 上的时候，才会有反应*/
+.logo a {
+    display: block;
+    width: 678px;
+    height: 70px;
+    background: url("../images/logo2.png") no-repeat;
+}
+
+.language {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    height: 50px;
+    /*当时就是缺这么一句话，我弄了半天*/
+    /*这句话的意思就是通过在 .language 中显式设置 line-height: 50px;，你确保了这个容器中的文本行高与容器高度一致。
+    这对于确保文本垂直居中以及更精确地控制布局是很重要的。如果没有设置 line-height，则浏览器将使用默认值，
+    可能导致布局不符合你的预期*/
+    line-height: 50px;
+    background-color: rgba(166, 168, 174, 0.2);
+    border-radius: 8px;
+}
+
+.language .Fr {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    padding: 0; /* 可选：去掉默认内边距 */
+    list-style: none; /* 去掉默认列表样式 */
+}
+
+.Fr > li {
+    /*display 属性用于定义元素应该生成的框类型。在这里，block 值将元素呈现为块级元素。
+    块级元素会在页面上独占一行，并且垂直方向上会有一些默认的间距，从上至下排列。*/
+    display: block;
+    width: 100%;
+}
+
+.Fr > li a {
+    margin-left: 15px;
+}
+
+.Fr > li i {
+    margin-left: 80px;
+}
+
+
+/* 隐藏 语言的 下拉菜单 */
+.subLanguage {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease; /* 卷帘门过渡效果 */
+    /*display: none;*/
+    position: absolute;
+    z-index: 1;
+    /* 设置尺寸和样式 */
+    width: 150px; /* 设置宽度 */
+    background-color: rgba(59, 68, 75, 0.7); /* 设置背景色 */
+    border-radius: 8px;
+}
+
+/* 显示 语言的 下拉菜单 */
+.language .Fr > li:hover .subLanguage {
+    max-height: 200px; /* 设置一个足够大的值，以展开内容 */
+    /*display: block;*/
+}
+
+/* Connect 部分 */
+.connect {
+    position: absolute;
+    top: 50px;
+    /*这是相对于浏览器左边框的相对距离*/
+    right: 0px;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    /*background: #FFD600;*/
+}
+
+.connect i {
+    margin-left: 20px;
+}
+
+.connect a {
+    margin-left: 10px;
+    font-size: larger;
+    font-family: "Apple Color Emoji";
+}
+
+/*header 部分 end*/
+
+
+
+/*尾部start*/
+.footer {
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    line-height: 200px;
+    background-color: #3B444B;
+}
+
+.footer > div {
+    height: 200px;
+    /*background-coloxxr: aliceblue;*/
+    position: relative;
+}
+
+
+/*div logo2 的设置*/
+/*position: 子绝父相,这样子元素的相对位置就是基于父元素的*/
+.logo2 {
+    /*justify-content: center;*/
+    position: absolute;
+    top: 10px;
+    /*这是相对于 .w div 左边框的相对距离*/
+    left: 510px;
+    width: 200px;
+    height: 150px;
+    /*background: #FFD600;*/
+}
+
+.logo2 a{
+    display: block;
+    width: 195px;
+    height: 150px;
+    background-image: url("../images/logo3.png"); /* 替换 'your-image.jpg' 为实际图片的路径 */
+    background-size: cover; /* 保持宽高比并覆盖整个屏幕 */
+    background-position: center; /* 居中对齐 */
+    background-repeat: no-repeat; /* 不重复 */
+}
+
+.dev {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 350px;
+    height: 180px;
+    /*当时就是缺这么一句话，我弄了半天*/
+    /*这句话的意思就是通过在 .language 中显式设置 line-height: 50px;，你确保了这个容器中的文本行高与容器高度一致。
+    这对于确保文本垂直居中以及更精确地控制布局是很重要的。如果没有设置 line-height，则浏览器将使用默认值，
+    可能导致布局不符合你的预期*/
+    /*这里设置为 45 px，相当于从上到下把这个 div 每 45 px 就分一个*/
+    line-height: 45px;
+    /*background: #FFD600;*/
+    /*让其中的元素垂直居中*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*让里面的 h4 元素的字变成白色*/
+    color: #ffffff;
+}
+
+
+.link {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 80px;
+    height: 100px;
+    /*当时就是缺这么一句话，我弄了半天*/
+    /*这句话的意思就是通过在 .language 中显式设置 line-height: 50px;，你确保了这个容器中的文本行高与容器高度一致。
+    这对于确保文本垂直居中以及更精确地控制布局是很重要的。如果没有设置 line-height，则浏览器将使用默认值，
+    可能导致布局不符合你的预期*/
+    line-height: 100px;
+    /*background: #FFD600;*/
+}
+
+.in{
+    margin: 0 5px;
+}
+
+.copyright {
+    /*justify-content: center;*/
+    left: 450px;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    height: 30px;
+    /*当时就是缺这么一句话，我弄了半天*/
+    /*这句话的意思就是通过在 .language 中显式设置 line-height: 50px;，你确保了这个容器中的文本行高与容器高度一致。
+    这对于确保文本垂直居中以及更精确地控制布局是很重要的。如果没有设置 line-height，则浏览器将使用默认值，
+    可能导致布局不符合你的预期*/
+    line-height: 30px;
+    /*background: #550c52;*/
+    /*让其中的元素垂直居中*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*让里面的 h4 元素的字变成白色*/
+    color: #ffffff;
+}
+
+/*尾部end*/
+
+/*背景图片1 start, index 和 Contact 都用*/
+.backimage {
+    margin: 0;
+    padding: 0;
+    /* background-color: #272726; */
+    background-image: url('../images/Exercise.jpg'); /* 替换 'your-image.jpg' 为实际图片的路径 */
+    background-size: cover; /* 保持宽高比并覆盖整个屏幕 */
+    background-position: center; /* 居中对齐 */
+    background-repeat: no-repeat; /* 不重复 */
+    /*100vh 表示元素的高度将占据整个视窗的高度。这对于创建全屏背景图片或元素很有用，特别是在移动设备上。*/
+    /*这个很重要，90vh 表示元素的高度将占据整个视窗高度的90%，就是说这个图片占据你电脑屏幕的 90%，对于响应式的请求很有用，因为每个人的电脑屏幕大小都不一样*/
+    height: 90vh; /* 设置页面高度为视口高度 */
+    position: relative;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 半透明蒙板的颜色和透明度，根据需要调整 */
+    /*不用 filter 这个模糊效果，使用 backdrop-filter 可以保证这个模糊不影响其他元素*/
+    /*backdrop-filter: blur(1px); !* 设置模糊效果，可以根据需要调整模糊程度 *!*/
+    display: flex;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    flex-direction: column;
+    align-items: center;
+}
+/*背景图片1 end*/

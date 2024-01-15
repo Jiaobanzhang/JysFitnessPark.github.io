@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--它用于指定网页的语言-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jys-FitnessPark｜Personal Health Space｜Better Health, Better Life</title>
+    <!-- 网站说明 SEO -->
+    <meta name="description" content="Jys Personal Health Space/Better Health, Better Life" />
+    <!-- 引入favicon图标 -->
+    <!-- rel 是 HTML 中的一个属性，用于定义当前文档与被链接文档之间的关系, ico 表示图标, shortcut icon 表示被链接文档是当前文档的图标文件-->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- 引入我们初始化样式文件 -->
+    <link rel="stylesheet" href="css/Basic.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 关键字 SEO -->
+    <meta name="Keywords" content="Jys,Fitness,Health,Better Life" />
+</head>
+
+<body>
+
+    <!-- 将 相同的 js 文件进行统一管理 -->
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- header容器 -->
+    <div id="header-container"></div>
+
+    <!-- 导航栏容器 -->
+    <div id="nav-container"></div>
+
+    <!--第一个图片部分-->
+    <div class="backimage">
+        <div class="overlay">
+            <h1 style="color: #ffffff">EXERCISE PHYSIQUE -> BONNE SANTÉ -> BONNE VIE</h1>
+            <p>BIENVENUE</p>
+
+            <!-- 幻灯片滑动部分 -->
+            <div class="slideshow">
+                <div class="container">
+                    <!-- 第一个产品图 -->
+                    <div class="image-container fade">
+                        <a href="parcours.html"><img src="upload/product2.png"></a>
+                    </div>
+                    <!-- 第二个产品图 -->
+                    <!-- 最开始的时候给 第二个产品图设置为 none, 不然的话，页面刚开始加载的时候两个图片都会显现出来 -->
+                    <div class="image-container fade" style="display: none">
+                        <a href="Contact.html"><img src="upload/product1.png"></a>
+                    </div>
+                    <!-- 下面的小圆点 -->
+                    <div class="spot-container">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                    <!-- 左边的箭头 -->
+                    <div class="left-pointing">
+                        <a class="arrow" onclick="plusSlides(-1)">❮</a>
+                    </div>
+                    <!-- 右边的箭头 -->
+                    <div class="right-pointing">
+                        <a class="arrow" onclick="plusSlides(1)">❯</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--第二个图片部分-->
+    <div class="backimage2">
+        <div class="overlay">
+
+        </div>
+    </div>
+
+    <!--第二个图片部分-->
+    <div class="backimage3">
+        <div class="overlay">
+
+        </div>
+    </div>
+
+    <!-- footer 容器 -->
+    <div id="footer-container"></div>
+</body>
+
+</html>
